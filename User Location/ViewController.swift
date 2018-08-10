@@ -32,25 +32,44 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
    }
    
    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+      
       let userLocation: CLLocation = locations[0]
       
-      print(userLocation)
-      
-      let lat = userLocation.coordinate.latitude
-      
-      let lon = userLocation.coordinate.longitude
-      
-      let latDelta: CLLocationDegrees = 0.05
-      
-      let lonDelta: CLLocationDegrees = 0.05
-      
-      let span: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: latDelta, longitudeDelta: lonDelta)
-      
-      let coordinates = CLLocationCoordinate2D(latitude: lat, longitude: lon)
-      
-      let region: MKCoordinateRegion = MKCoordinateRegion(center: coordinates, span: span)
-      
-      map.setRegion(region, animated: true)
+      CLGeocoder().reverseGeocodeLocation(userLocation) { (placeMarks, error) in
+         if error != nil {
+            print(error!)
+         } else {
+            if let placeMark = placeMarks?[0] {
+               var subThoroughfare = ""
+               
+               if placeMark.subLocality != nil {
+                  subThoroughfare = placeMark.subThoroughfare!
+               }
+               
+               var thoroughfare = ""
+               
+               if placeMark.thoroughfare != nil {
+                  thoroughfare = placeMark.thoroughfare!
+               }
+               
+               
+               var subLocality = ""
+               
+               if placeMark.subLocality != nil {
+                  subLocality = placeMark.subLocality!
+               }
+               
+               var subAdministrativeArea = ""
+               
+               if placeMark.subAdministrativeArea != nil {
+                  subAdministrativeArea = placeMark.subAdministrativeArea!
+               }
+               
+               print(subThoroughfare, thoroughfare, subAdministrativeArea, subLocality, subLocality)
+               
+            }
+         }
+      }
       
    }
 
