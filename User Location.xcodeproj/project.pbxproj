@@ -12,6 +12,7 @@
 		2BD48E4F211DD7070010B393 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BD48E4D211DD7070010B393 /* Main.storyboard */; };
 		2BD48E51211DD7090010B393 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BD48E50211DD7090010B393 /* Assets.xcassets */; };
 		2BD48E54211DD7090010B393 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BD48E52211DD7090010B393 /* LaunchScreen.storyboard */; };
+		2BD48E5D211DD75E0010B393 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD48E5C211DD75E0010B393 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		2BD48E50211DD7090010B393 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BD48E53211DD7090010B393 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BD48E55211DD7090010B393 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BD48E5C211DD75E0010B393 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BD48E5D211DD75E0010B393 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +43,7 @@
 			children = (
 				2BD48E48211DD7070010B393 /* User Location */,
 				2BD48E47211DD7070010B393 /* Products */,
+				2BD48E5B211DD75D0010B393 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +66,14 @@
 				2BD48E55211DD7090010B393 /* Info.plist */,
 			);
 			path = "User Location";
+			sourceTree = "<group>";
+		};
+		2BD48E5B211DD75D0010B393 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2BD48E5C211DD75E0010B393 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
